@@ -61,3 +61,8 @@ Start with `report/Cloud_Architecture_Report.md`, then open the diagram source i
 
 ### Originality
 The architecture, documentation, diagrams, assumptions, and repository organization are prepared specifically for this internship task and are intended as original project work.
+
+### Author
+
+Geddam Ashok Babu
+Cloud Computing Internship
