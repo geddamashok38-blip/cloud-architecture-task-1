@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2026-09-03T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+<diagram name="Cloud Architecture">
+<mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+<root>
+<mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="users" value="Users&#xa;Web / Mobile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="650" y="40" width="180" height="70" as="geometry"/></mxCell>
+<mxCell id="dns" value="DNS&#xa;Managed Domain Resolution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="650" y="150" width="180" height="70" as="geometry"/></mxCell>
+<mxCell id="edge" value="CDN / Load Balancer&#xa;HTTPS / Health Checks" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="600" y="270" width="280" height="80" as="geometry"/></mxCell>
+<mxCell id="az1" value="Availability Zone A&#xa;&#xa;Private App Subnet&#xa;Application Instance A" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="360" y="410" width="280" height="120" as="geometry"/></mxCell>
+<mxCell id="az2" value="Availability Zone B&#xa;&#xa;Private App Subnet&#xa;Application Instance B" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="840" y="410" width="280" height="120" as="geometry"/></mxCell>
+<mxCell id="db" value="Private Database Tier&#xa;Managed Relational Database&#xa;HA / Backups" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="470" y="620" width="300" height="100" as="geometry"/></mxCell>
+<mxCell id="storage" value="Object Storage&#xa;Documents / Images / Exports" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="820" y="620" width="260" height="100" as="geometry"/></mxCell>
+<mxCell id="cache" value="Managed Cache&#xa;Non-authoritative Data" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="1110" y="620" width="220" height="100" as="geometry"/></mxCell>
+<mxCell id="backup" value="Backup / DR Storage&#xa;PITR / Versioning / Restore Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="470" y="790" width="300" height="90" as="geometry"/></mxCell>
+<mxCell id="monitor" value="Monitoring / Logs / Alerts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="850" y="790" width="260" height="90" as="geometry"/></mxCell>
+<mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="users" target="dns"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="dns" target="edge"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="edge" target="az1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="edge" target="az2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="az1" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="az2" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="az1" target="storage"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="az2" target="storage"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="az1" target="cache"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="db" target="backup"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;" edge="1" parent="1" source="az1" target="monitor"><mxGeometry relative="1" as="geometry"/></mxCell>
+</root></mxGraphModel>
+</diagram></mxfile>
